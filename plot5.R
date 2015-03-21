@@ -1,9 +1,11 @@
+#### This code is available at https://github.com/xls2web/ExDataCP2
+
 ## Source dataset upload
 ## Only execute only if no NEI and SCC objects present in the environment - to save time
 NEI <- readRDS("SourceData/summarySCC_PM25.rds")
 SCC <- readRDS("SourceData/Source_Classification_Code.rds")
 
-## Question 4
+## Question 5
 ## How have emissions from motor vehicle sources changed from 1999–2008 in Baltimore City?
 aggr<-ddply(NEI[which(NEI$fips=="24510" & NEI$type=="ON-ROAD"),],
             .(year), summarize, totalEmissions = sum(Emissions, na.rm=T))
